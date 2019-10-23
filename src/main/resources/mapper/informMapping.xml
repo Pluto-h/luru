@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.luru.luru.mapper.InformMapper">
+    <select id="selectOneInform" parameterType="INTEGER" resultType="com.luru.luru.entity.Inform">
+        select inform_headLine,inform_content
+        from inform
+        where inform_type = #{informType}
+    </select>
+
+    <select id="selectTwoInform" parameterType="INTEGER" resultType="com.luru.luru.entity.Inform">
+        select inform_id,inform_headLine
+        from inform
+        where inform_type = #{informType}
+    </select>
+
+    <select id="selectThreeInform" parameterType="INTEGER" resultType="com.luru.luru.entity.Inform">
+        select inform_id,inform_headLine,inform_time
+        from inform
+        where inform_type = #{informType}
+    </select>
+
+    <select id="selectAllInform" parameterType="INTEGER" resultType="com.luru.luru.entity.Inform">
+        select *
+        from inform
+        where inform_id = #{informId}
+    </select>
+</mapper>
